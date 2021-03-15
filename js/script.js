@@ -1,5 +1,5 @@
 //mobile menu
-let mql = window.matchMedia("(max-width: 768px)");
+let mql = window.matchMedia("screen and (max-width: 768px)");
 
 let mobileMenuGo = () => {
   document.querySelectorAll(".menu__item--title").forEach((menuItem) => {
@@ -20,7 +20,18 @@ if (window.innerWidth <= 768) {
   mobileMenuGo();
 }
 
-mql.addEventListener("change", (e) => {
+// mql.addEventListener("change", (e) => {
+//   if (e.matches) {
+//     mobileMenuGo();
+//   } else {
+//     document.querySelectorAll(".menu__item--title").forEach((menuItem) => {
+//       var old_element = menuItem;
+//       var new_element = menuItem.cloneNode(true);
+//       old_element.parentNode.replaceChild(new_element, old_element);
+//     });
+//   }
+// });
+mql.addListener((e) => {
   if (e.matches) {
     mobileMenuGo();
   } else {
@@ -63,7 +74,7 @@ document.querySelector(".lang_button").addEventListener("click", (e) => {
     e.target.classList.remove("lang_button_up");
   }
 });
-//SVG properly displaying
+// SVG properly displaying
 document.querySelectorAll(".icon").forEach((e) => {
   let bBox = e.getBBox();
   e.setAttribute("width", bBox.width + 2);

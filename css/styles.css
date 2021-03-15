@@ -219,6 +219,7 @@ li {
   }
   .logotype_wrapper {
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 103;
     padding: 0 20px;
@@ -240,9 +241,11 @@ li {
     box-sizing: border-box !important;
     font-size: 130%;
     position: relative;
+    cursor: pointer;
   }
   .interactive__menu {
-    position: absolute;
+    position: fixed;
+    overflow: auto;
     width: 300px;
     right: 100%;
     margin-top: 50px;
@@ -260,7 +263,8 @@ li {
     padding-left: 30px;
     border-bottom: 1px solid #777;
   }
-  .menu__list--item {
+  .menu__list {
+    overflow: scroll;
   }
   .menu__item--title::before,
   .lang_button::before,
@@ -558,5 +562,37 @@ li {
   }
   .lang_wrapper {
     width: 10%;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .interactive__menu {
+      margin-top: 0px !important;
+    }
+    .fasa {
+      width: 125px;
+      height: 25px;
+    }
+    .sticpay {
+      width: 106px;
+      height: 21px;
+    }
+    .pm {
+      width: 123px;
+      height: 31px;
+    }
+    .neteller {
+      width: 124px;
+      height: 22px;
+    }
+    .mc {
+      width: 51px;
+      height: 38px;
+    }
+    .visa {
+      width: 65px;
+      height: 21px;
+    }
   }
 }
